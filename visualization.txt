@@ -1,0 +1,31 @@
+import pandas as pd
+import seaborn as sb
+import matplotlib.pyplot as plt
+
+iris_d = sb.load_dataset("iris")
+
+iris_d.head()
+
+plt.scatter(iris_d['petal_length'],iris_d['petal_width'], color='red')
+plt.title("scatter plot")
+plt.xlabel("petal length")
+plt.ylabel("petal width")
+plt.show()
+
+plt.hist(iris_d['sepal_width'], bins=20)
+plt.title("Histogram")
+plt.xlabel("Sepal width")
+plt.ylabel("Frequency")
+plt.show()
+
+plt.hist(iris_d['petal_width'], bins=15)
+plt.title("Histogram")
+plt.xlabel("Petal width")
+plt.ylabel("Frequency")
+plt.show()
+
+sb.boxplot(x="sepal_width", data=iris_d)
+plt.title("Box Plot")
+
+sb.boxplot(x="sepal_length", data=iris_d)
+plt.title("Box Plot")
